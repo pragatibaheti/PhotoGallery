@@ -1,4 +1,5 @@
 ﻿using PhotoGallery.Common;
+using PhotoGallery.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,7 +37,9 @@ namespace PhotoGallery
             //lst.Add(new MovieData { Title = "Movie 1", ImageData = LoadImage("StoreLogo.png") });
             
             InitializeComponent();
-            //lstImage.ItemsSource = lst;
+            lst = Database.GetAllImages();
+
+
 
 
         }
@@ -61,8 +64,12 @@ namespace PhotoGallery
                 StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
                 Debug.WriteLine(localFolder.Path + "10000000");
                 StorageFile copiedFile = await file.CopyAsync(localFolder, file.Name, NameCollisionOption.ReplaceExisting);
-                lst.Add(new MovieData { Title = copiedFile.Name, ImageData = LoadImage(copiedFile.Path) });
-                Debug.WriteLine(lst.Count());
+                //lst.Add(new MovieData { Title = copiedFile.Name, ImageData = LoadImage(copiedFile.Path});
+                BitmapImage img =  LoadImage(copiedFile.Path);
+          
+                var x = Database.InsertImage(copiedFile.Name, img);
+                lst = Database.GetAllImages();
+                Debug.WriteLine(x);
 
             }
 
@@ -71,12 +78,12 @@ namespace PhotoGallery
 
             }
             //lst.Add(new MovieData { Title = "Movie 100", ImageData = LoadImage("StoreLogo.png") });
-            LoadImages();
+            //LoadImages();
 
         }
         public void LoadImages()
         { 
-            Debug.WriteLine(lst.Count());
+            //Debug.WriteLine(lst.Count());
             foreach(var item in lst)
             {
                 Debug.WriteLine(item.Title+" "+item.ImageData);

@@ -10,6 +10,9 @@ namespace PhotoGallery.Common
     public class MovieData
     {
         private string _Title;
+        private int _id;
+        
+        public int id { get; set; }
         public string Title
         {
             get { return this._Title; }

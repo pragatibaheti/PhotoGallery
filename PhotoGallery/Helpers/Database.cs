@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
+using Windows.System;
 using Windows.UI.Xaml.Media.Imaging;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -22,6 +23,51 @@ namespace PhotoGallery.Helpers
         Database()
         {
             SqConnection = new SQLiteConnection(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\" + DB_NAME);
+            
+        }
+        public static bool Register(string username,string password)
+        {
+           try
+            {
+                using (var con = new SQLiteConnection(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\" + DB_NAME))
+                {
+                    con.;
+                    var query = String.Format("INSERT INTO Login VALUES('{0}','{1}')", username, password);
+                    var statement = connection.Prepare(query);
+                    statement.Step();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public static bool Login(string username, string password)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\" + DB_NAME))
+                {
+
+
+                    var query = String.Format("SELECT COUNT(username) FROM Login WHERE username == '{0}' AND password =='{1}'", username, password);
+                    var statement = connection.Prepare(query);
+
+                    if ( statement.DataCount == 1)
+                    {
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
         }
         public static ObservableCollection<MovieData> GetAllImages()
         {

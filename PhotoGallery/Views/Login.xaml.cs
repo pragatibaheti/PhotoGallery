@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 //C:\Users\praga\AppData\Local\Packages\43164a0c-6895-42c0-80d8-8eb93791a857_vwghp0w08xty0\LocalState
 namespace PhotoGallery
@@ -53,7 +54,7 @@ namespace PhotoGallery
             if (result)
                 Frame.Navigate(typeof(MainPage));
             else
-                Debug.WriteLine("Try Again!");
+                Debug.WriteLine("Wrong Credentials!");
         }
     }
 }

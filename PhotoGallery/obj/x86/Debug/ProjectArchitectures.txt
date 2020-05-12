@@ -1,1 +1,1 @@
-C:\Users\Administrator\source\repos\PhotoGallery\PhotoGallery\PhotoGallery.csproj;x86
+C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\PhotoGallery.csproj;x86

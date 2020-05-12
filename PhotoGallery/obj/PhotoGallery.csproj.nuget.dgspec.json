@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj": {}
+    "C:\\Users\\praga\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj": {
+    "C:\\Users\\praga\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj",
+        "projectUniqueName": "C:\\Users\\praga\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj",
         "projectName": "PhotoGallery",
-        "projectPath": "C:\\Users\\Administrator\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\source\\repos\\PhotoGallery\\PhotoGallery\\obj\\",
+        "projectPath": "C:\\Users\\praga\\source\\repos\\PhotoGallery\\PhotoGallery\\PhotoGallery.csproj",
+        "packagesPath": "C:\\Users\\praga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\praga\\source\\repos\\PhotoGallery\\PhotoGallery\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\praga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "uap10.0.17763"
@@ -46,10 +44,6 @@
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.2.9, )"
-            },
-            "SQLite.Net-PCL": {
-              "target": "Package",
-              "version": "[3.1.1, )"
             },
             "SQLitePCL": {
               "target": "Package",

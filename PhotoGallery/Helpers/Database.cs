@@ -31,9 +31,9 @@ namespace PhotoGallery.Helpers
             {
                 using (var con = new SQLiteConnection(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\" + DB_NAME))
                 {
-                    con.;
+                     
                     var query = String.Format("INSERT INTO Login VALUES('{0}','{1}')", username, password);
-                    var statement = connection.Prepare(query);
+                    var statement = con.Prepare(query);
                     statement.Step();
                 }
                 return true;
@@ -52,10 +52,17 @@ namespace PhotoGallery.Helpers
                 {
 
 
-                    var query = String.Format("SELECT COUNT(username) FROM Login WHERE username == '{0}' AND password =='{1}'", username, password);
+                    var query = String.Format("SELECT username,password FROM Login WHERE username == '{0}' AND password =='{1}'", username, password);
                     var statement = connection.Prepare(query);
-
-                    if ( statement.DataCount == 1)
+                    int count = 0;
+                    while (!(SQLiteResult.DONE == statement.Step()))
+                    {
+                        if (statement[0] != null)
+                        {
+                            count++;
+                        }
+                    }
+                    if (count == 1)
                     {
                         return true;
                     }

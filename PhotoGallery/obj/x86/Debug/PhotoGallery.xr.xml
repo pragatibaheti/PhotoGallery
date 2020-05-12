@@ -30,7 +30,13 @@
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
+      <RootProperty Name="RenderTransform" />
       <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
+      <RootProperty Name="ScaleX" />
+      <RootProperty Name="ScaleY" />
+      <RootProperty Name="Rotation" />
     </RootType>
     <RootType FullName="PhotoGallery.Login" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">

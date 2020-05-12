@@ -11,8 +11,12 @@
     <Grid>
         <TextBox x:Name="txtusername" HorizontalAlignment="Center" Margin="0,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="324" PlaceholderText="Username"/>
         <TextBox x:Name="txtpassword" HorizontalAlignment="Center" Margin="0,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="324" PlaceholderText="Password"/>
-        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Center" Margin="0,500,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.276,-1.317" Height="62" Width="324" Click="Register_Click"/>
-        <Button x:Name="btnLogin" Content="Login" RenderTransformOrigin="12.409,4.561" HorizontalAlignment="Center" Margin="0,600,0,0" VerticalAlignment="Top" Height="60" Width="319" Click="btnLogin_Click"/>
+        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Center" Margin="0,544,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.276,-1.317" Height="16" Width="104" Click="Register_Click">
+            <Button.RenderTransform>
+                <CompositeTransform ScaleX="-1" ScaleY="-1" Rotation="365.488"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btnLogin" Content="Login" RenderTransformOrigin="12.409,4.561" Margin="798,479,0,0" VerticalAlignment="Top" Height="25" Width="114" Click="btnLogin_Click"/>
 
     </Grid>
 </Page>

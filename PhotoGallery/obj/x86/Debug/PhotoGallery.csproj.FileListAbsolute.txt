@@ -140,3 +140,6 @@ C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\obj\x86\Debug\Views\Login.
 C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\obj\x86\Debug\Views\MainPage.xbf
 C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\obj\x86\Debug\WinUX.UWP.pri.xml
 C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636063074760000000.json
+C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\FireSharp.dll
+C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\FireSharp.Serialization.JsonNet.dll
+C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\RestSharp.dll

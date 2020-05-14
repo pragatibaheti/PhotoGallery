@@ -11,7 +11,7 @@ namespace PhotoGallery.Common
     {
         private string _Title;
         private int _id;
-        
+
         public int id { get; set; }
         public string Title
         {
@@ -25,5 +25,12 @@ namespace PhotoGallery.Common
             get { return this._ImageData; }
             set { this._ImageData = value; }
         }
+    }
+    public class Image_Model
+    {
+        public string Img { get; set; }
+        public string Title { get; set; }
+        public string DateAdded { get; set; }
+
     }
 }

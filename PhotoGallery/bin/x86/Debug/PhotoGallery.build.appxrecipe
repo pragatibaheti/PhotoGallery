@@ -28,11 +28,20 @@
     <AppxPackagedFile Include="C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\PhotoGallery.exe">
       <PackagePath>entrypoint\PhotoGallery.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\praga\.nuget\packages\firesharp\1.1.0\lib\net45\FireSharp.dll">
+      <PackagePath>FireSharp.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\praga\.nuget\packages\firesharp.serialization.jsonnet\1.1.0\lib\net45\FireSharp.Serialization.JsonNet.dll">
+      <PackagePath>FireSharp.Serialization.JsonNet.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\praga\.nuget\packages\microsoft.data.sqlite.core\3.1.3\lib\netstandard2.0\Microsoft.Data.Sqlite.dll">
       <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\praga\.nuget\packages\newtonsoft.json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\praga\.nuget\packages\restsharp\104.4.0\lib\net4\RestSharp.dll">
+      <PackagePath>RestSharp.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.9\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>

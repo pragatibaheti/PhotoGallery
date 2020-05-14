@@ -21,6 +21,7 @@
                     <StackPanel x:ConnectionId='5' Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Image x:ConnectionId='6'                             HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="UniformToFill" Height="100" Width="100" />
                         <TextBlock x:ConnectionId='7'                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                        <AppBarButton x:ConnectionId='8' Icon="Share"                           />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

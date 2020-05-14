@@ -21,6 +21,7 @@
                     <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Image Source="{x:Bind ImageData}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="UniformToFill" Height="100" Width="100" />
                         <TextBlock Text="{x:Bind Title}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                        <AppBarButton Icon="Share" Click="AppBarButton_Click"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

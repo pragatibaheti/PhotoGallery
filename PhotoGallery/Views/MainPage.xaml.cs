@@ -24,6 +24,7 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using Windows.Storage.Streams;
 using System.Threading.Tasks;
+using Firebase.Storage;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace PhotoGallery
@@ -56,7 +57,7 @@ namespace PhotoGallery
             else
                 Debug.WriteLine("Connection not established");
 
-           // LoadImages();
+            // LoadImages();
 
         }
 
@@ -77,17 +78,34 @@ namespace PhotoGallery
             Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
             if (file != null)
             {
+                string username = readSetting("userName");
                 Debug.WriteLine(file.Name);
                 //Image img1 = new BitmapImage(file.Name);
                 StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                Debug.WriteLine(localFolder.Path + "10000000");
+               /* Debug.WriteLine(localFolder.Path + "10000000");*/
                 StorageFile copiedFile = await file.CopyAsync(localFolder, file.Name, NameCollisionOption.ReplaceExisting);//copy to localstate
-                //lst.Add(new MovieData { Title = copiedFile.Name, ImageData = LoadImage("ms-appdata:///local/" + copiedFile.Name)});
+                lst.Add(new MovieData { Title = copiedFile.Name, ImageData = LoadImage("ms-appdata:///local/" + copiedFile.Name)});
                 //BitmapImage img =  LoadImage(copiedFile.Path);
-                Windows.Storage.Streams.IRandomAccessStream random = await Windows.Storage.Streams.RandomAccessStreamReference.CreateFromUri(new Uri("ms-appdata:///local/" + copiedFile.Name)).OpenReadAsync();//ms-appdata:///local/
-                Windows.Graphics.Imaging.BitmapDecoder decoder = await Windows.Graphics.Imaging.BitmapDecoder.CreateAsync(random);
+               /* Windows.Storage.Streams.IRandomAccessStream random = await Windows.Storage.Streams.RandomAccessStreamReference.CreateFromUri(new Uri("ms-appdata:///local/" + copiedFile.Name)).OpenReadAsync();//ms-appdata:///local/
+                Windows.Graphics.Imaging.BitmapDecoder decoder = await Windows.Graphics.Imaging.BitmapDecoder.CreateAsync(random);*/
+                
+                 //   var stream = File.Open( copiedFile.Path, FileMode.Open);
 
-                Windows.Graphics.Imaging.PixelDataProvider pixelData = await decoder.GetPixelDataAsync();
+                // Construct FirebaseStorage with path to where you want to upload the file and put it there
+                
+                 /*   var task = new FirebaseStorage("gs://photogallery-81868.appspot.com/")
+                 .Child("data")
+                 .Child("random")
+                 .Child("copiedFile.Name")
+                 .PutAsync(stream);
+
+                    // Track progress of the upload
+                    task.Progress.ProgressChanged += (s, y) => Debug.WriteLine($"Progress: {y.Percentage} %");
+
+                    // Await the task to wait until upload is completed and get the download url
+                    var downloadUrl = await task;*/
+               
+              /*  Windows.Graphics.Imaging.PixelDataProvider pixelData = await decoder.GetPixelDataAsync();
                 byte[] bytes = pixelData.DetachPixelData();
                 string output = Convert.ToBase64String(bytes);
                 DateTime dd = DateTime.Now;
@@ -98,10 +116,10 @@ namespace PhotoGallery
                     Title = file.Name,
                     DateAdded = dd.ToString("dd/MM/yyyy")
                 };
-                SetResponse request = await client.SetTaskAsync("Image/", data);
+                SetResponse request = await client.SetTaskAsync("Image/"+username+"/", data);
                 Image_Model result = request.ResultAs<Image_Model>();
-                Debug.WriteLine("Success");
-               // LoadImages();
+                Debug.WriteLine("Success");*/
+                // LoadImages();
                 //var x = Database.InsertImage(copiedFile.Name, img);
                 //lst = Database.GetAllImages();
                 //Debug.WriteLine(x);
@@ -117,7 +135,8 @@ namespace PhotoGallery
         }
         public async void LoadImages()
         {
-            FirebaseResponse response = await client.GetTaskAsync("Image/");
+            string username = readSetting("userName");
+            FirebaseResponse response = await client.GetTaskAsync("Image/" + username + "/");
             //ObservableCollection<Image_Model> imgs = response.ResultAs<ObservableCollection<Image_Model>>();
             Image_Model img = response.ResultAs<Image_Model>();
             //foreach (Image_Model img in imgs)
@@ -141,5 +160,26 @@ namespace PhotoGallery
 
         }
 
+        private string readSetting(string userLabel)
+        {
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            //Reading and returning your setting value
+            var value = localSettings.Values[userLabel];
+            if (value != null)
+                return value.ToString();
+            else
+                return userLabel;
+
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Share clicked");
+            ListViewItem i = sender as ListViewItem;
+            if (i != null)
+            {
+                Debug.WriteLine("Image here");
+            }
+        }
     }
 }

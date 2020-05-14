@@ -40,6 +40,7 @@ namespace PhotoGallery
             {
                 txtpassword.Text = "";
                 txtusername.Text = "";
+               
             }
             else
                 Debug.WriteLine("Try Again!");
@@ -51,6 +52,13 @@ namespace PhotoGallery
             string password = txtpassword.Text;
             bool result;
             result = Database.Login(username, password);
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            //setting value 
+            localSettings.Values["userName"] = username;
+
+            //Getting the setting value 
+            string value = localSettings.Values["userName"].ToString();
+            Debug.WriteLine(value);
             if (result)
                 Frame.Navigate(typeof(MainPage));
             else

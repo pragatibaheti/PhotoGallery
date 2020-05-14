@@ -143,3 +143,7 @@ C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\obj\x86\Debug\.winmd_cache
 C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\FireSharp.dll
 C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\FireSharp.Serialization.JsonNet.dll
 C:\Users\praga\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\RestSharp.dll
+C:\Users\Administrator\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\FireSharp.dll
+C:\Users\Administrator\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\FireSharp.Serialization.JsonNet.dll
+C:\Users\Administrator\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\RestSharp.dll
+C:\Users\Administrator\source\repos\PhotoGallery\PhotoGallery\bin\x86\Debug\Firebase.Storage.dll
